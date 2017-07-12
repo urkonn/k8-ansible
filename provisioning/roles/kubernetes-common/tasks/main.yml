@@ -1,10 +1,10 @@
 ---
 - name: Enable Red Hat Repository
-  yum-repository:
+  yum_repository:
     name: rhel-7-server-extras-rpms
     enable: yes
   when:
-      - ansible_distribution == "CentOS"
+      - ansible_distribution == "RedHat"
 
 - name: Install Kubernetes Packages
   yum: name={{ item }} state=present
